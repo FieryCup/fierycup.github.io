@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "title": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "active",
+          "closed",
+          "frozen",
+          "unknown"
+        ]
+      },
+      "technologies": {
+        "$ref": "/schemas/technologies.schema.json"
+      },
+      "links": {
+        "$ref": "/schemas/links.schema.json"
+      },
+      "participants": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "roles": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "creator",
+                  "python_developer",
+                  "java_developer"
+                ]
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "id",
+            "roles"
+          ]
+        },
+        "minItems": 1,
+        "uniqueItems": true
+      },
+      "short_description": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "title",
+      "status",
+      "technologies",
+      "participants",
+      "short_description",
+      "description"
+    ]
+  }
+}

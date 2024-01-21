@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "/schemas/links.schema.json",
+
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "name",
+      "link"
+    ]
+  }
+}
