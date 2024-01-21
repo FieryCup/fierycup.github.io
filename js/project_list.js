@@ -71,18 +71,17 @@ fetch("./data/projects.json")
                         return res.json();
                     })
                     .then((technologies) => {
+                        if (projects.length === 0) {
+                            return;
+                        }
+
+                        projectsNode.childNodes.forEach((node) => {
+                            node.remove();
+                        });
 
                         projects.forEach((project) => {
                             createProjectCard(projectsNode, project, statuses, technologies);
                         })
-
-                        if (projects.length === 0) {
-                            let emptyTextNode = document.createElement("p");
-                            emptyTextNode.innerText = "Отсутствуют";
-                            emptyTextNode.classList.add("emptyText");
-                            emptyTextNode.classList.add("text");
-                            projectsNode.appendChild(emptyTextNode);
-                        }
                     });
             });
     });
