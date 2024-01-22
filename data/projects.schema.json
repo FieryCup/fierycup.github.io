@@ -35,17 +35,7 @@
               "minimum": 0
             },
             "roles": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "creator",
-                  "python_developer",
-                  "java_developer"
-                ]
-              },
-              "minItems": 1,
-              "uniqueItems": true
+              "$ref": "/schemas/roles.schema.json"
             }
           },
           "required": [

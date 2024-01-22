@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "/schemas/roles.schema.json",
+
+  "type": "array",
+  "items": {
+    "type": "string",
+    "enum": [
+      "creator",
+      "python_developer",
+      "java_developer",
+      "javascript_developer"
+    ]
+  },
+  "minItems": 1,
+  "uniqueItems": true
+}
